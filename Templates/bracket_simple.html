@@ -1,0 +1,15 @@
+<form method="POST">
+  <label>Name: <input type="text" name="name" required></label><br><br>
+
+  {% for group, group_queens in queens.items() %}
+    <h3>Pick Top 3 for {{ group.title() }} Bracket:</h3>
+    {% for queen in group_queens %}
+      <label>
+        <input type="checkbox" name="{{ group }}" value="{{ queen }}"> {{ queen }}
+      </label><br>
+    {% endfor %}
+    <br>
+  {% endfor %}
+
+  <button type="submit">Submit</button>
+</form>
