@@ -1,15 +1,28 @@
-<form method="POST">
-  <label>Name: <input type="text" name="name" required></label><br><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Your Bracket</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Submit Your Bracket</h2>
+  <form method="POST">
+    <label>Name:<br>
+      <input type="text" name="name" required>
+    </label>
 
-  {% for group, group_queens in queens.items() %}
-    <h3>Pick Top 3 for {{ group.title() }} Bracket:</h3>
-    {% for queen in group_queens %}
-      <label>
-        <input type="checkbox" name="{{ group }}" value="{{ queen }}"> {{ queen }}
-      </label><br>
+    {% for group, group_queens in queens.items() %}
+      <h3>{{ group.title() }} Bracket — Pick Top 3:</h3>
+      {% for queen in group_queens %}
+        <label>
+          <input type="checkbox" name="{{ group }}" value="{{ queen }}">
+          {{ queen }}
+        </label>
+      {% endfor %}
     {% endfor %}
-    <br>
-  {% endfor %}
 
-  <button type="submit">Submit</button>
-</form>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
