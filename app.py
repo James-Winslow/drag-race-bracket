@@ -23,9 +23,9 @@ def bracket():
         return redirect('/submitted')
 
     queens = {
-        'pink': ['Aja', 'Bosco', 'Queen X', 'Queen A', 'Queen B', 'Queen C'],
-        'orange': ['Jorgeous', 'Queen Y', 'Queen Z', 'Queen D', 'Queen E', 'Queen F'],
-        'purple': ['Ginger Minj', 'Mistress Isabelle Brooks', 'Queen W', 'Queen G', 'Queen H', 'Queen I']
+        'pink': ['Jorgeous', 'Kerri Colby', 'Lydia B. Kollins', 'Mistress Isabelle Brooks', 'Nicole Paige Brooks', 'Tina Burner'],
+        'orange': ['Aja', 'Bosco', 'DeJa Skye', 'Irene the Alien', 'Olivia Lux', 'Phoenix'],
+        'purple': ['Acid Betty', 'Alyssa Hunter', 'Cynthia Lee Fontaine', 'Daya Betty', 'Denali', 'Ginger Minj']
     }
     return render_template('bracket_simple.html', queens=queens)
 
